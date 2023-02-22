@@ -6,15 +6,18 @@
   <div>{{ doubleCount }}</div>
   <div>
     <el-auto-resizer>
-      <div style="color: red">111111111111111111</div>
-      <div style="color: red">2222222222</div>
-      <div style="color: red">333333333333</div>
+      <svg-icon
+        class-name="icon"
+        icon="http://www.yygnb.com/demo/car.svg"
+      ></svg-icon>
+      <svg-icon class-name="icon" icon="aa"></svg-icon>
     </el-auto-resizer>
   </div>
 </template>
 
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
+import SvgIcon from "@/components/SvgIcon/index.vue";
 import { useCounterStore } from "@/stores/counter";
 const counterStore = useCounterStore();
 const { count, doubleCount } = storeToRefs(counterStore);
@@ -23,4 +26,9 @@ counterStore.$patch({
 });
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.icon {
+  color: cornflowerblue;
+  font-size: 30px;
+}
+</style>
