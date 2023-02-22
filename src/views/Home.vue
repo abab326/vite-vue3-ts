@@ -7,6 +7,7 @@
   <div>
     <el-auto-resizer>
       <div style="color: red">111111111111111111</div>
+      <div style="color: red">2222222222</div>
     </el-auto-resizer>
   </div>
 </template>
