@@ -1,0 +1,9 @@
+// 背景色
+$bg-color: #0ff;
+// 图标色
+$icon-color: red;
+
+:export {
+    bgColor: $bg-color;
+    iconColor: $icon-color;
+}

@@ -29,7 +29,7 @@ counterStore.$patch({
 
 <style scoped lang="scss">
 .icon {
-    color: cornflowerblue;
+    color: $icon-color;
     font-size: 30px;
 }
 </style>
