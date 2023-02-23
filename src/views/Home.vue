@@ -2,6 +2,9 @@
     <el-button type="primary" size="default" @click="counterStore.increment">
         <span>按钮</span>
     </el-button>
+    <el-button type="primary" size="default" @click="apiTest">
+        <span>按钮</span>
+    </el-button>
     <div>{{ count }}</div>
     <div>{{ doubleCount }}</div>
     <div>
@@ -19,12 +22,17 @@ import { storeToRefs } from "pinia";
 import SvgIcon from "@/components/SvgIcon/index.vue";
 import { useMouse } from "@vueuse/core";
 import { useCounterStore } from "@/stores/counter";
+import { getHomeDetail } from "@/api";
 const counterStore = useCounterStore();
 const { x, y } = useMouse();
 const { count, doubleCount } = storeToRefs(counterStore);
 counterStore.$patch({
     count: 20,
 });
+
+function apiTest() {
+    getHomeDetail();
+}
 </script>
 
 <style scoped lang="scss">
