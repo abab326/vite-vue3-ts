@@ -9,13 +9,20 @@
         "test:unit": "vitest --environment jsdom --root src/",
         "build-only": "vite build",
         "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-        "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+        "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore --fix src",
+        "prettier": "prettier --write .",
         "commit": "git-cz"
     },
     "config": {
         "commitizen": {
             "path": "node_modules/cz-customizable"
         }
+    },
+    "lint-staged": {
+        "*.{js,ts}": [
+            "npm run lint",
+            "npm run prettier"
+        ]
     },
     "dependencies": {
         "@vueuse/core": "^9.13.0",
